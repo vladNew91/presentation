@@ -16,8 +16,264 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background="#8405bbda">
+					<h1>TypeScript</h1>
+				</section>
+
+				<section>
+					<section>
+						<h2>What is TypeScript?</h2>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">JavaScript and More</h3>
+						<p>
+							<em>TypeScript</em> is an open-source language which builds on JavaScript, one of the world’s most used tools, by adding static type definitions.
+							Types provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly.
+							Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">A Result You Can Trust</h3>
+						<p>
+							All valid JavaScript code is also <em>TypeScript</em> code. You might get type-checking errors, but that won't stop you from running the resulting JavaScript. While you can go for stricter behavior, that means you're still in control.
+							TypeScript code is transformed into JavaScript code via the TypeScript compiler or Babel. This JavaScript is clean, simple code which runs anywhere JavaScript runs: In a browser, on Node.JS or in your apps.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">Gradual Adoption</h3>
+						<p>
+							Adopting <em>TypeScript</em> is not a binary choice, you can start by annotating existing JavaScript with JSDoc, then switch a few files to be checked by TypeScript and over time prepare your codebase to convert completely.
+							TypeScript’s type inference means that you don’t have to annotate your code until you want more safety.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">Types On Every Desk</h3>
+						<p>
+							Most of the world's JavaScript is un-typed, and inference can only go so far. To address this, the TypeScript team helps maintain
+							Definitely Typed - a community project to provide types and inline documentation to existing JavaScript.
+							This project allows the community to maintain type definitions for JavaScript libraries without putting extra pressure on their maintainers.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">Consistently Good Tooling</h3>
+						<p>
+							By handling a lot of the editor integration inside TypeScript, you can get a consistent experience working in many editors.
+							This lets you easily jump between editors like Visual Studio, Visual Studio Code, Nova, Atom, Sublime Text, Emacs, Vim, WebStorm and Eclipse.
+							TypeScript's editor integration supports JavaScript, so it's quite likely you're already using TypeScript under the hood.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: burlywood;">Evolving with Standards</h3>
+						<p>
+							The TypeScript team contributes to the TC39 committees which help guide the evolution of the JavaScript language.
+							When new features have reached stage 3, then they are ready for inclusion in TypeScript.
+							For example the TypeScript team championed proposals like Optional Chaining, Nullish coalescing Operator, Throw Expressions and RegExp Match Indices.
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<h2>Installing TypeScript</h2>
+					<section data-background="#0f0020bb">
+						<p style="color: #bc94e9;">Via npm:</p>
+						<pre style="color: #bc94e9;">> npm install -g typescript</pre>
+					</section>
+
+					<section data-background="#0f0020bb">
+						<p style="color: #bc94e9;">By installing TypeScript’s Visual Studio plugins</p>
+					</section>
+				</section>
+
+				<section data-background="#4e2d1a;">
+					<section>
+						<h3>What Are the Basic Data Types in TypeScript?</h3>
+					</section>
+
+					<section>
+						<p>Like JavaScript and any other language, TypeScript also provides basic data types to handle numbers, 
+							strings, etc. Some common data types in TypeScript are: number, string, boolean, enum, void, null, undefined, any, never, Array and tuple.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Number Types</h3>
+					</section>
+
+					<section>
+						<p>In TypeScript, numbers are floating point values that have a type of number. 
+							You can assign any numeric values including decimals, hexadecimals, binary, and octal literals. 
+							But to use binary and octal literals, 
+							you must use a TypeScript version which follows ECMAScript 2015 or higher.
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">let decimalValue: number = 10;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">String Types</h3>
+					</section>
+
+					<section>
+						<p>
+							When you want to use textual data, string types are used and get denoted by the keyword string. Like JavaScript, 
+							TypeScript also uses double quotes (") and single quotes (') to surround the string value.
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">let lastName: string = 'Chowdhury';</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Boolean Types</h3>
+					</section>
+
+					<section>
+						<p>
+							To use boolean data types in TypeScript, for declaring variables, use the boolean keyword.
+							Here's a simple code to declare a boolean type variable:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let isPrimaryAccount: boolean = true;
+	let hasCards: boolean = false;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Enum Types</h3>
+					</section>
+
+					<section>
+						<p>
+							Enumerated data types (enums) are a set of numeric values with more friendly names. 
+							It's an addition on top of JavaScript that TypeScript offers. 
+							The variables of enumerated data types are declared with the keyword enum. 
+							Here's how you can declare an enum variable and use it in TypeScript:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	enum CardTypes { Debit, Credit, Virtual }
+	let card: CardTypes = CardTypes.Debit;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Void Types</h3>
+					</section>
+
+					<section>
+						<p>
+							In general, this type of data types are used in functions that do not return any value.
+								<code style="background-color: black; color: burlywood;">For example,
+									function showMessage(): void { ... }
+								</code>. In TypeScript, you can also declare a variable of type void,
+							but can only assign undefined or null to them. We will discuss undefined and null types in the following sections.
+						</p>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Null Types</h3>
+					</section>
+
+					<section>
+						<p>
+							You can declare a variable of type null using the null keyword and can assign only null value to it.
+							As null is a subtype of all other types, you can assign it to a number or a boolean value.
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let nullValue: null = null;
+	let numericValue: number = null;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Undefined Types</h3>
+					</section>
+
+					<section>
+						<p>
+							You can use the undefined keyword as a data type to store the value undefined to it.
+							As undefined is a subtype of all other types, just like null, you can assign it to a number or a boolean value. 
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let undefinedValue: undefined = undefined;
+	let numericValue: number = undefined;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Any Types</h3>
+					</section>
+
+					<section>
+						<p>
+							While writing code for which you are unsure of the data type of a value, due to its dynamic content,
+							you can use the keyword any to declare said variable. This is often useful when you are seeking input from users or at third-party library/service.
+							This is also useful when you are declaring an array which has a mixed data type.
+							It's just like the dynamic keyword available in C#. For example:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let dynamicValue: any = "Kunal Chowdhury";
+	dynamicValue = 100;
+	dynamicValue = 0b1100101;
+	dynamicValue = true;</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Never Types</h3>
+					</section>
+
+					<section>
+						<p>
+							The never type represents the data type of values that never occur.
+							For example, the following function that always throws an exception can never return a value.
+							Thus, the return type of the function can be set as never. Here's the function declaration:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	function throwError(message: string): never {
+		throw new Error(message);
+	}</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Array Types</h3>
+					</section>
+
+					<section>
+						<p>
+							Just like JavaScript, you can work with arrays in TypeScript and can define them in either of the following two ways;
+							the second approach, however, is the more generic way to declare arrays:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let marks: number[] = [80, 85, 75];</pre>
+					</section>
+
+					<section>
+						<h3 style="color: rgb(0, 255, 191);">Tuple Types</h3>
+					</section>
+
+					<section>
+						<p>
+							A tuple is a data type that allows you to create an array where the type of a fixed number of elements are 
+							known but need not be same. While accessing an element of a Tuple with a valid known index, the data of 
+							correct type will be returned. In case you access an element outside the set of known indices, a union type 
+							will be used. Consider the following code snippet as an example:
+						</p>
+
+						<pre style="background-color: black; color: burlywood;">
+	let person: [string, number] = ["Hello world", 2021];</pre>
+					</section>
+				</section>
+
+				<section data-background="#8405bbda">
+					<h2>have a good coding</h2>
+				</section>
 			</div>
 		</div>
 
